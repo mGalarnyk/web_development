@@ -10,6 +10,17 @@
 		-ms-user-select: none;
     }
 
+    #main_container {
+        width: 400px;
+        height: 631px;
+        border: 6px solid #212121;
+
+    }
+
+    #lop_screen {
+        height: 312px;
+
+    }
 	
 	/*---- Theme Classes ----*/
 	
