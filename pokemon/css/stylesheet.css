@@ -17,10 +17,52 @@
 
     }
 
-    #lop_screen {
+
+
+    #top_screen {
         height: 312px;
+        overflow: hidden;
 
     }
+
+    #bottom_screen {
+        overflow: hidden;
+
+    }
+
+    #move1-text {
+        width: 132px;
+        bottom: 196px;
+        left: 34px;
+        z-index: 1;
+    }
+
+      #move2-text {
+        width: 132px;
+        bottom: 196px;
+        right: 34px;
+        z-index: 1;
+    }
+
+      #move3-text {
+        width: 132px;
+        bottom: 101px;
+        left: 34px;
+        z-index: 1;
+    }
+
+      #move4-text {
+        width: 132px;
+        bottom: 101px;
+        right: 34px;
+        z-index: 1;
+    }
+
+
+    .img-spacing {
+        float: left;
+    }
+
 	
 	/*---- Theme Classes ----*/
 	
