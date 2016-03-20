@@ -80,19 +80,47 @@ var cpuPokemon;
 var userPokemon; 
 
 var cpuTurn = {
-	play: function()
-	{
+	play: function(){
+		var randomMove = Math.floor(Math.random() *4);
+		var currentCPUMove = cpuPokemon.moves[randomMove];
 
+		var setUpCPUField = function () {
+			$("#chat-text").text("What will " + cpuPokemon.name + " do?");
+			prepareToAttack();
+		};
+
+		var prepareToAttack = function () {
+			$("#pikachu-img").animate({
+				top: "-=25",
+
+			}, 200, function() {
+				$("#pikachu-img").animate({
+					top = "+=25", 
+				}, 200)
+
+			});
+		};
+
+		setUpCPUField();
 	}
-
 };
 
 var playerTurn = {
 	play: function()
 	{
 
+
 	}
 };
+
+var loop = function () {
+	if (cpuPokemon.health <= 0 || userPokemon.health <= 0) {
+		$("#game-over").removeClass("hide");
+		console.log("Game Over")
+	} else {
+		currentState.play();
+	}
+}
 
 var init = function () {
 	cpuPokemon = pikachu; 
@@ -101,7 +129,8 @@ var init = function () {
 	$("#cpu-lvl").text("lvl " + cpuPokemon.lvl);
 	$("#user-name").text(userPokemon.name);
 	$("#user-lvl").text("lvl " + userPokemon.lvl);
-	currentState = playerTurn; 
+	currentState = cpuTurn; 
+	loop();
 
 };
 
