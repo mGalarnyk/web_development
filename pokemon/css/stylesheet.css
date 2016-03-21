@@ -106,6 +106,19 @@
         left: 22px;
     }
 
+    .user-attack-img {
+        width: 100px;
+        top: 95px;
+        right: 57px;
+        z-index: 1;
+    }
+
+     .cpu-attack-img {
+        width: 100px;
+        top: 185px;
+        left: 60px;
+        z-index: 1;
+    }
 
     .img-spacing {
         float: left;

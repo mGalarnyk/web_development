@@ -100,7 +100,39 @@ var cpuTurn = {
 				}, 200)
 
 			});
+			getAccuracy();
 		};
+
+		var getAccuracy = function () {
+			var setAccuracy = Math.random();
+			if (setAccuracy <= currentCPUMove.accuracy)
+			{
+				$("#chat-text").text(cpuPokemon.name + " used " + currentCPUMove.name + "!");
+				getMoveType();
+			} else {
+				$("#chat-text").text(cpuPokemon.name + " missed with " + currentCPUMove.name + "!");
+				currentState = playerTurn;
+				setTimeout(loop, 1500)
+			} 
+		};
+
+		var getMoveType = function () {
+			showMoveAnimation();
+			
+			if (currentCPUMove.type == "Attack")
+			{
+				setTimeout(attackingMove, 1500);
+			}
+			else {
+				setTimeout(defensiveMove, 1500)
+			}
+		};
+
+		var showMoveAnimation = function () {
+			$("#attack-img").addClass("cpu-attack-img");
+			$("#attack-img").removeClass("hide");
+			$("#attack-img").fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100);
+		}
 
 		setUpCPUField();
 	}
