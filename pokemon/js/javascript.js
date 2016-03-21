@@ -78,7 +78,6 @@ var pikachu = {
 var currentState; 
 var cpuPokemon; 
 var userPokemon; 
-/*
 var cpuTurn = {
 	play: function() {
 		var randomMove = Math.floor(Math.random() *4);
@@ -95,7 +94,7 @@ var cpuTurn = {
 
 			}, 200, function() {
 				$("#pikachu-img").animate({
-					top = "+=25", 
+					top: "+=25", 
 				}, 200)
 
 			});
@@ -104,7 +103,7 @@ var cpuTurn = {
 		setUpCPUField();
 	}
 };
-*/
+
 
 var cpuTurn = {
 	play: function() {
@@ -127,7 +126,7 @@ var loop = function () {
 		$("#game-over").removeClass("hide");
 		console.log("Game Over");
 	} else {
-		//currentState.play();
+		currentState.play();
 	}
 }
 
@@ -138,7 +137,7 @@ var init = function () {
 	$("#cpu-lvl").text("lvl " + cpuPokemon.lvl);
 	$("#user-name").text(userPokemon.name);
 	$("#user-lvl").text("lvl " + userPokemon.lvl);
-	currentState = playerTurn; 
+	currentState = cpuTurn; 
 	loop();
 
 };
