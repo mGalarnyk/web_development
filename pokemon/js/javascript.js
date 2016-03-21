@@ -166,13 +166,13 @@ var playerTurn = {
 		var currentUserMove;
 
 		setUpUserField = function () {
-			var = moveButtons = ["move1-text", "move2-text", "move3-text", "move4-text"];
+			var moveButtons = ["#move1-text", "#move2-text", "#move3-text", "#move4-text"];
 			$("#user-buttons").removeClass("hide");
 			$("chat-text").text("What will " + userPokemon.name + " do?");
 
 			for (var i = moveButtons.length - 1; i >=0; i --){
 				$(moveButtons[i]).text(userPokemon.moves[i].name);
-			};
+			}
 		};
 
 		var prepareToAttack = function () {
@@ -244,7 +244,7 @@ var playerTurn = {
 			loop();
 		};
 
-		$("#move1-button", "#move2-button", "#move3-button", "#move4-button").unbind().click(function () {
+		$("#move1-button, #move2-button, #move3-button, #move4-button").unbind().click(function () {
 			var move = $(this).attr("value");
 			currentUserMove = userPokemon.moves[move];
 			prepareToAttack();
@@ -263,7 +263,6 @@ var loop = function () {
 		console.log("Game Over");
 	} else {
 		currentState.play();
-
 
 	}
 }
