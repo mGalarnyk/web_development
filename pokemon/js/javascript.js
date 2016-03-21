@@ -3,7 +3,8 @@ var charmander = {
 	health: 100, 
 	lvl: 12, 
 	effect: null, 
-	moves: [{
+	moves: 
+	[{
 		name: "Ember", 
 		type: "Attack", 
 		power: 20, 
@@ -78,8 +79,9 @@ var pikachu = {
 var currentState; 
 var cpuPokemon; 
 var userPokemon; 
+
 var cpuTurn = {
-	play: function() {
+	play: function () {
 		var randomMove = Math.floor(Math.random() *4);
 		var currentCPUMove = cpuPokemon.moves[randomMove];
 
@@ -104,13 +106,6 @@ var cpuTurn = {
 	}
 };
 
-
-var cpuTurn = {
-	play: function() {
-
-	}
-};
-
 var playerTurn = {
 	play: function ()
 	{
@@ -127,6 +122,8 @@ var loop = function () {
 		console.log("Game Over");
 	} else {
 		currentState.play();
+
+
 	}
 }
 
